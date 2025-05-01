@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+.bg-image{
+  
+  background: linear-gradient(rgba(0,0,0),rgba(0.8,0,0,0)), url("./assets/login-background.png");
+  background-attachment: fixed;
+  background-size:cover;
+}
+
+.card {
+  @apply w-[40%] min-h-[20vh] border-[0.12rem] shadow-2xl rounded-md border-gray-300 bg-white;
+}
+
+.header{
+  @apply text-xl text-gray-600 font-medium;
+}
+
+.label {
+  @apply text-slate-500 text-[1.1rem];
+}
+
+.small {
+  @apply text-[0.75rem] text-gray-400;
+}
+
+.btn{
+  @apply pl-4 pr-4 font-extralight text-center  cursor-pointer transition-all duration-300 rounded-md pt-2 pb-2;
+}
+
+.btn-blue {
+  @apply bg-blue-500 hover:bg-blue-500/90 text-white;
+}
+.btn-black {
+  @apply bg-black hover:bg-black/90 text-white;
+}
+.btn-red {
+  @apply bg-red-500 hover:bg-red-500/90 text-white;
+}
+
+.btn-white {
+  @apply bg-white hover:bg-white/90 text-black;
+}
+
+.btn-blue-disabled {
+  @apply bg-blue-500/60 text-white cursor-not-allowed;
+}
+
+.btn-black-disabled {
+  @apply bg-black/60 text-white cursor-not-allowed;
+}
+
+.btn-red-disabled {
+  @apply bg-red-500/60 text-white cursor-not-allowed;
+
+}
+
+.btn-white-disabled {
+  @apply bg-red-500/60 text-white cursor-not-allowed;
+
+}
+
+.modal-background {
+  @apply absolute z-[9]  top-0 left-0 transition-all duration-500 h-[100%] w-[100%];
+}
+.loading {
+  @apply bg-red-500 h-[2px] z-[9999999] transition-all duration-400 top-0 left-0 absolute animate-loading;
+}
+
+.modal {
+  @apply absolute z-[10]   left-[50%]  transition-all duration-500 translate-x-[-50%] translate-[-50%] rounded-md bg-slate-50 w-[30%] h-[20vh];
+}
+
+.toast{
+  @apply pt-4 pl-4 pr-4 pb-4  z-[8] absolute  bottom-[10px] transition-all duration-500 rounded-md;
+}
+
+@theme {
+  --animate-loading: loading 1.7s ease-in-out infinite;
+  @keyframes loading {
+    0%{
+    width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+}
