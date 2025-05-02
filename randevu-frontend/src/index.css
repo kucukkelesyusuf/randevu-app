@@ -7,6 +7,11 @@
   background-size:cover;
 }
 
+@custom-variant sideOpen (&:where(.sideOpen, .sideOpen *));
+@custom-variant timeoutSideOpen (&:where(.timeoutSideOpen, .timeoutSideOpen *));
+@custom-variant active (&:where(.active, .active *));
+
+
 .card {
   @apply w-[40%] min-h-[20vh] border-[0.12rem] shadow-2xl rounded-md border-gray-300 bg-white;
 }

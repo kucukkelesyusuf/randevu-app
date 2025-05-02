@@ -1,4 +1,4 @@
-import axios, { Axios, AxiosError } from "axios";
+import axios from "axios";
 import { useDispatch } from "react-redux";
 import { ErrorToaster } from "../slice/ToastSlice";
 import { useState } from "react";
