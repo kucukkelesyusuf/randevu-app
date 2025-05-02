@@ -1,7 +1,8 @@
 import { Bell, Menu, MessageSquareText, Sidebar, X } from "lucide-react";
-import { SidebarComponent } from "../components/sidebar/Sidebar";
+import { SidebarComponent } from "../components/sidebar/sidebar";
 import { useSideBar } from "../hooks/useSideBar";
 import { Outlet } from "react-router-dom";
+import { Doctor } from "../pageItems/doctor";
 
 export const DoctorPage = () => {
   const { ToggleSidebar } = useSideBar();
@@ -9,7 +10,7 @@ export const DoctorPage = () => {
   return (
     <>
         <div className="flex min-h-screen relative">
-      <SidebarComponent />
+      <SidebarComponent sidebarItem={Doctor} />
       <div
         className={`min-[300px]:w-[100%] sideOpen:min-[1000px]:w-[75%] min-[1000px]:w-[93%] sideOpen:min-[1700px]:w-[85%]  min-[1700px]:w-[97%]  transition-all duration-300 bg-slate-50`}
       >
