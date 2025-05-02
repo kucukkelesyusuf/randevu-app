@@ -4,6 +4,7 @@ import { Loading } from "./components/loading/loading";
 import { Toast } from "./components/toast/toast";
 import { DoctorPage } from "./pages/DoctorPage";
 import { PersonelPage } from "./pages/PersonelPage";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/personel" element={<PersonelPage/>} >
         
         </Route>
+         <Route path="*"  element={<NotFound/>} />
        </Routes>
        <Toast/>
       <Loading />
