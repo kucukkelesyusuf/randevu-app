@@ -1,9 +1,11 @@
 import {
   LucideProps,
+  X,
 } from "lucide-react";
 import logo from "../../assets/logo-2.png";
 import { Link } from "react-router-dom";
 import { ISideBarItem } from "../../pageItems/doctor";
+import { useSideBar } from "../../hooks/useSideBar";
 
 
 interface IProps {
@@ -15,6 +17,9 @@ function Icon({ icon: Icon }: { icon: React.FC<LucideProps> }) {
 }
 
 export const SidebarComponent = (props: IProps) => {
+
+  const {ToggleSidebar} = useSideBar();
+
   return (
     <>
       <div
@@ -92,6 +97,7 @@ export const SidebarComponent = (props: IProps) => {
                 </h2>
                 {items.map(({ link, text, icon }, key) => (
                   <Link
+                  onClick={()=>ToggleSidebar()}
                     to={link}
                     key={key}
                     className="flex items-center pt-2 pb-2 pl-4 pr-4  rounded-md cursor-pointer space-x-4 text-gray-700 bg-slate-100 sidebar-item active:bg-black active:text-white transition-all duration-300"
@@ -111,6 +117,9 @@ export const SidebarComponent = (props: IProps) => {
           </div>
         </div>
       </div>
+      <div className="sideOpen:bg-black/70 hidden sideOpen:block z-[5] absolute top-0 left-0 w-[100%]  h-[100%] sideOpen:min-[1000px]:hidden" onClick={()=>ToggleSidebar()}></div>
+
+<X className="absolute hidden sideOpen:max-[999px]:block z-[6] top-4 right-4 text-white w-14 h-14 min-[1000px]:hidden cursor-pointer" onClick={()=>ToggleSidebar()}/>
     </>
   );
 };
