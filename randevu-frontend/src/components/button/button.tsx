@@ -10,7 +10,7 @@ interface IButton extends PropsWithChildren {
 }
 
 export const Button = (props:IButton) => {
-    console.log(props.onClick)
+
   return (
     <button className={`btn  ${props.disabled ? `btn-${props.variant}-disabled` : `btn-${props.variant}`} ${props.className ? props.className : ''}`} onClick={()=>props.onClick ? props.onClick() : ()=>{}} type={props.type}>
         {props.children}
