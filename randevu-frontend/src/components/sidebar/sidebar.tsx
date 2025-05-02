@@ -6,6 +6,7 @@ import logo from "../../assets/logo-2.png";
 import { Link } from "react-router-dom";
 import { ISideBarItem } from "../../pageItems/doctor";
 import { useSideBar } from "../../hooks/useSideBar";
+import { useState } from "react";
 
 
 interface IProps {
@@ -19,6 +20,8 @@ function Icon({ icon: Icon }: { icon: React.FC<LucideProps> }) {
 export const SidebarComponent = (props: IProps) => {
 
   const {ToggleSidebar} = useSideBar();
+
+  const [selected,setSelected] = useState("");
 
   return (
     <>
@@ -49,15 +52,16 @@ export const SidebarComponent = (props: IProps) => {
                   {title}{" "}
                 </h2>
 
-                  <div className="pl-2 pr-2">
-                <h2 className="bg-black/90 text-white pt-2 pb-2 pl-4 pr-4 text-center rounded-md sideOpen:hidden block"> {title.split(" ")[0][0] + title.split(" ")[1][0]}  </h2>
-                    </div>
+              
+                <h2 className="bg-gray-400 text-white pt-2 pb-2 pl-4 pr-4 text-center rounded-md sideOpen:hidden block"> {title.split(" ")[0][0] + title.split(" ")[1][0]}  </h2>
+              
 
                 {items.map(({ link, text, icon }, key) => (
                   <Link
                     to={link}
                     key={key}
-                    className="flex items-center pt-2 pb-2 pl-4 pr-4 sideOpen:justify-normal justify-center rounded-md cursor-pointer space-x-0 sideOpen:space-x-4 text-gray-700 bg-slate-100 sidebar-item active:bg-black active:text-white transition-all duration-300"
+                     onClick={()=>setSelected(text)}
+                    className={`flex items-center pt-2 pb-2 pl-4 pr-4 sideOpen:justify-normal justify-center rounded-md cursor-pointer space-x-0 sideOpen:space-x-4 sidebar-item transition-all duration-300 ${selected === text ? "bg-black text-white ": "text-gray-700 bg-slate-100 "}`}
                   >
                     <Icon icon={icon} />
                     <h2 className="text-[0.8rem] text-inherit hidden sideOpen:block">
