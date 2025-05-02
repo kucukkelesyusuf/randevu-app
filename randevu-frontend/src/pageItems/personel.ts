@@ -1,4 +1,4 @@
-import { Archive, MessageSquareText, NotebookPen, SquareActivity, User } from "lucide-react";
+import { Archive, Import, Info, MessageSquareText, NotebookPen, SquareActivity, Stethoscope} from "lucide-react";
 import { ISideBarItem } from "./doctor";
 
 
@@ -8,11 +8,20 @@ export const Personel:ISideBarItem[] =
         title:"Hastane İşlemleri",
         items:[
             {
-                icon:User,
-                text:"Hastalarım",
-                link:"/doctor/patient"
+                icon:Import  ,
+                text:"Hasta Kayıt İşlemleri",
+                link:"/personel/patient/doctor/notes"
             },
-          
+            {
+                icon:Info ,
+                text:"Hasta Bilgileri",
+                link:"/personel/patient/information"
+            },
+            {
+                icon:Stethoscope  ,
+                text:"Doktor Notları",
+                link:"/personel/patient/doctor/notes"
+            },
         ]
     },
     {

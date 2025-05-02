@@ -48,6 +48,11 @@ export const SidebarComponent = (props: IProps) => {
                   {" "}
                   {title}{" "}
                 </h2>
+
+                  <div className="pl-2 pr-2">
+                <h2 className="bg-black/90 text-white pt-2 pb-2 pl-4 pr-4 text-center rounded-md sideOpen:hidden block"> {title.split(" ")[0][0] + title.split(" ")[1][0]}  </h2>
+                    </div>
+
                 {items.map(({ link, text, icon }, key) => (
                   <Link
                     to={link}

@@ -1,13 +1,13 @@
 import { SidebarComponent } from "../components/sidebar/sidebar";
 import { Outlet } from "react-router-dom";
-import { Doctor } from "../pageItems/doctor";
 import { RightNavbar } from "../components/navbar/rightNavbar";
 import { LeftNavbar } from "../components/navbar/leftNavbar";
+import { Personel } from "../pageItems/personel";
 
 export const PersonelPage = () => {
   return (
     <div className="flex min-h-screen relative">
-      <SidebarComponent sidebarItem={Doctor} />
+      <SidebarComponent sidebarItem={Personel} />
       <div
         className={`min-[300px]:w-[100%] sideOpen:min-[1000px]:w-[75%] min-[1000px]:w-[93%] sideOpen:min-[1700px]:w-[85%]  min-[1700px]:w-[97%]  transition-all duration-300 bg-slate-50`}
       >
